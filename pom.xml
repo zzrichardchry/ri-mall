@@ -3,30 +3,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.rick.mall</groupId>
+    <artifactId>ri-mall</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>mall-common</module>
+        <module>mall-jpa</module>
+        <module>mall-security</module>
+        <module>mall-demo</module>
+        <module>mall-admin</module>
+        <module>mall-search</module>
+        <module>mall-portal</module>
+    </modules>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.13</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <groupId>com.rick.mall</groupId>
-    <artifactId>ri-mall</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
-    <name>ri-mall</name>
-    <description>ri-mall</description>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>ri-mall-admin</module>
-        <module>ri-mall-jpa</module>
-        <module>ri-mall-security</module>
-        <module>ri-mall-demo</module>
-        <module>ri-mall-admin</module>
-        <module>ri-mall-search</module>
-        <module>ri-mall-portal</module>
-    </modules>
 
     <properties>
         <java.version>1.8</java.version>
@@ -47,6 +44,9 @@
         <logstash-logback.version>7.2</logstash-logback.version>
         <minio.version>8.4.5</minio.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
+        <mall-common.version>1.0-SNAPSHOT</mall-common.version>
+        <mall-jpa.version>1.0-SNAPSHOT</mall-jpa.version>
+        <mall-security.version>1.0-SNAPSHOT</mall-security.version>
     </properties>
 
     <dependencies>
@@ -63,6 +63,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <!--SpringBoot JPA-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.hutool</groupId>
@@ -83,16 +88,29 @@
             <artifactId>jaxb-api</artifactId>
             <version>${jaxb-api.version}</version>
         </dependency>
-        <!--SpringBoot JPA-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-            <!--druid connection pool-->
+            <!--mall common module-->
+            <dependency>
+                <groupId>com.rick.mall</groupId>
+                <artifactId>mall-common</artifactId>
+                <version>${mall-common.version}</version>
+            </dependency>
+            <!--mall JPA module-->
+            <dependency>
+                <groupId>com.rick.mall</groupId>
+                <artifactId>mall-jpa</artifactId>
+                <version>${mall-jpa.version}</version>
+            </dependency>
+            <!--mall Security Module-->
+            <dependency>
+                <groupId>com.rick.mall</groupId>
+                <artifactId>mall-security</artifactId>
+                <version>${mall-security.version}</version>
+            </dependency>
+            <!--Druid Connection Pool-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
@@ -127,13 +145,13 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql-connector.version}</version>
             </dependency>
-            <!--SpringData工具包-->
+            <!--SpringData Tool-->
             <dependency>
                 <groupId>org.springframework.data</groupId>
                 <artifactId>spring-data-commons</artifactId>
                 <version>${spring-data-commons.version}</version>
             </dependency>
-            <!--JWT(Json Web Token)登录支持-->
+            <!--JWT(Json Web Token)-->
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
@@ -161,12 +179,14 @@
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
 </project>

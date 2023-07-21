@@ -3,23 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.rick.mall</groupId>
+    <artifactId>mall-common</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
     <parent>
         <groupId>com.rick.mall</groupId>
         <artifactId>ri-mall</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <groupId>com.rick.mall</groupId>
-    <artifactId>ri-mall-common</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
-    <name>ri-mall-common</name>
-    <description>ri-mall-common</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
 <!--        <dependency>-->

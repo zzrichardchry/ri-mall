@@ -10,11 +10,11 @@
     </parent>
 
     <groupId>com.rick.mall</groupId>
-    <artifactId>ri-mall-portal</artifactId>
+    <artifactId>mall-search</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>ri-mall-portal</name>
-    <description>ri-mall-portal</description>
+    <name>ri-mall-search</name>
+    <description>ri-mall-search</description>
 
     <properties>
         <java.version>1.8</java.version>

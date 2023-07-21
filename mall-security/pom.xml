@@ -10,11 +10,11 @@
     </parent>
 
     <groupId>com.rick.mall</groupId>
-    <artifactId>ri-mall-admin</artifactId>
+    <artifactId>mall-security</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>ri-mall-admin</name>
-    <description>ri-mall-admin</description>
+    <name>ri-mall-security</name>
+    <description>ri-mall-security</description>
 
     <properties>
         <java.version>1.8</java.version>
