@@ -3,26 +3,32 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.rick.mall</groupId>
+    <artifactId>mall-admin</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <parent>
         <groupId>com.rick.mall</groupId>
         <artifactId>ri-mall</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.rick.mall</groupId>
-    <artifactId>mall-admin</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>com.rick.mall</groupId>
+            <artifactId>mall-jpa</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.rick.mall</groupId>
+            <artifactId>mall-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
         </dependency>
     </dependencies>
 
@@ -31,6 +37,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

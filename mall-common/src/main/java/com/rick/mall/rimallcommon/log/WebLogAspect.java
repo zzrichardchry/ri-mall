@@ -6,7 +6,6 @@ import cn.hutool.json.JSONUtil;
 import com.rick.mall.rimallcommon.domain.WebLog;
 import com.rick.mall.rimallcommon.util.RequestUtil;
 import io.swagger.annotations.ApiOperation;
-import net.bytebuddy.implementation.bytecode.Throw;
 import net.logstash.logback.marker.Markers;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
